@@ -6,3 +6,6 @@ def getInfo():
     info['test'] = psutil.sensors_temperatures
     #psutil.net_connections()
     return info
+
+
+print(getInfo())
