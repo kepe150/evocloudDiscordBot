@@ -58,7 +58,7 @@ async def info(inter):
     embed = Embed(title='Informações do servidor', description='Veja em tempo real o uso dos recursos dos nossos servidores')
     embed.add_field(name='CPU:', value=str(info['cpu']) + '%')
     embed.add_field(name='RAM:', value=str(info['mem']) + ' Gb')
-    embed.add_field(name='RAM:', value=str(info['test']) + ' Gb')
+    embed.add_field(name='Temperatura CPU:', value=str(info['temp-cpu']) + ' C')
     await inter.response.send_message(embed=embed)
 
 @bot.slash_command(description="suporte")
