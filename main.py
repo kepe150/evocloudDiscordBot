@@ -16,6 +16,8 @@ bot = commands.InteractionBot(test_guilds=[int(os.getenv('ID'))])
 @bot.event
 async def on_ready():
     print(f"Logged in as {bot.user} (ID: {bot.user.id})\n")
+    # Isso é apenas para dizer para a hospedagem que o bot iniciou.
+    print("PROGRAMA INICIADO")
 
 @bot.event
 async def on_button_click(interaction: disnake.Interaction):
@@ -73,6 +75,3 @@ async def ticket_message(inter):
     await inter.send(view = view, embed=embed)
 
 bot.run(os.getenv('TOKEN'))
-
-# Isso é apenas para dizer para a hospedagem que o bot iniciou.
-print("PROGRAMA INICIADO")
