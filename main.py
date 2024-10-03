@@ -73,3 +73,6 @@ async def ticket_message(inter):
     await inter.send(view = view, embed=embed)
 
 bot.run(os.getenv('TOKEN'))
+
+# Isso é apenas para dizer para a hospedagem que o bot iniciou.
+print("PROGRAMA INICIADO")
