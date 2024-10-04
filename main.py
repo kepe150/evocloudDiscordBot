@@ -3,7 +3,8 @@ from disnake import Embed
 from disnake.ui import View, Button
 import disnake
 import infoServer
-
+import urllib.request
+import json
 from pathlib import Path
 import dotenv
 import os
