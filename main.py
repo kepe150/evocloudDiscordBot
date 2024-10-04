@@ -49,6 +49,7 @@ async def on_button_click(interaction: disnake.Interaction):
         channel_suport = interaction.channel
         await channel_suport.set_permissions(guild.default_role, read_messages=False)
         await channel_suport.edit(name=channel_suport.name + '-arquivado')
+
 @bot.slash_command(description="ping")
 async def ping(inter):
     print('pong')
@@ -73,5 +74,12 @@ async def ticket_message(inter):
     view.add_item(Button(label="Abrir chamado suporte", style=disnake.ButtonStyle.green, custom_id='ticket-suport'))
 
     await inter.send(view = view, embed=embed)
+
+@bot.slash_command(description="Pegar ip")
+async def get_ip(inter):
+    with urllib.request.urlopen('https://api.ipify.org?format=json') as response:
+        data = json.load(response)
+        print(f" ip = {data['ip']}")
+        await inter.send(data['ip'])
 
 bot.run(os.getenv('TOKEN'))
